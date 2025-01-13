@@ -2,11 +2,10 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
+from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity
 from api.models import db, User
 from api.utils import generate_sitemap, APIException
 from flask_cors import CORS
-# from werkzeug.security import generate_password_hash, check_password_hash
-from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
 
 api = Blueprint('api', __name__)
 
@@ -14,61 +13,57 @@ api = Blueprint('api', __name__)
 CORS(api)
 
 
-app = Flask(__name__)  
-app.config["JWT_SECRET_KEY"] = "super-secret-key"  
-jwt = JWTManager(app)
+@api.route('/hello', methods=['POST', 'GET'])
+def handle_hello():
+
+    response_body = {
+        "message": "Hello! I'm a message that came from the backend, check the network tab on the google inspector and you will see the GET request"
+    }
+
+    return jsonify(response_body), 200
 
 @api.route('/signup', methods=['POST'])
-def create_user():
-    request_body = request.get_json()
+def handle_create_user():
+    email = request.get_json()['email']
+    password = request.get_json()['password']
 
-    if not 'email' in request_body: 
-        return jsonify({'error': 'Falta el email.'}), 400
-    
-    if not 'password' in request_body: 
-        return jsonify({'error': 'Falta el password.'}), 400
-    
-    email = request_body['email'] 
-    password = request_body['password'] 
+    if email is None or password is None:
+        return jsonify({'msg': 'error'}), 400
 
-    user = User(email = email, password = password, is_active = True)
+    new_user = User()
+    new_user.email = email
+    new_user.password = password
+    new_user.is_active = True
 
-    db.session.add(user)
+    db.session.add(new_user)
     db.session.commit()
-        
-    response_body = {
-            "msg": "Usuario creado con éxito"
-        }
-    return jsonify(response_body), 201
-    
-    
+
+    return jsonify({'id': new_user.id}), 200
 
 @api.route('/login', methods=['POST'])
-def login_user():
+def handle_login():
+    email = request.get_json()['email']
+    password = request.get_json()['password']
 
-    email = request.json.get("email", "None")
-    password = request.json.get("password", "None")
-
-    user = User.query.filter_by(email = email).first()
-    if user is None: 
-        return jsonify({"result": "Email o contraseña incorrecta"}), 401
+    if email is None or password is None:
+        return jsonify({'msg': 'invalid credentials'}), 400
     
-    elif email != user.email or password != user.password: 
-        return jsonify({"msg": "Usuario o contraseña incorrecta"}), 404
+    user = User.query.filter_by(email=email, password=password).first()
+
+    if user is None:
+        return jsonify({'msg': 'user not exist'}), 404
     
-    else: 
-        access_token = create_access_token(identity = user.id)
-        return jsonify({"token": access_token, "user_id": user.id}), 200
+    access_token = create_access_token(identity=user.email)
 
-
+    return jsonify({'id': user.id, 'access_token': access_token}), 200
 
 @api.route('/private', methods=['GET'])
-@jwt_required()  
-def private_route():
-    current_user = get_jwt_identity()
-    
-    response_body = {
-        "msg": "Acceso permitido a contenido privado",
-        "user": current_user
-    }
-    return jsonify(response_body), 200
+@jwt_required()
+def handle_get_user():
+    current_user_email = get_jwt_identity()
+
+    user = User.query.filter_by(email=current_user_email).first()
+    if user is None:
+        return jsonify({'msg': 'user not exist'}), 404
+
+    return jsonify({'id': user.email, 'is_active': user.is_active}), 200
