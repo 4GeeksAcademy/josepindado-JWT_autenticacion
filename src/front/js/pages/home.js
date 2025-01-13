@@ -9,17 +9,17 @@ export const Home = () => {
 	return (
 		<div className="home-container justify-content-center">
             <div className="card">
-                <h1 className="card-title">¡Wellcome to GeekGym!</h1>
+                <h1 className="card-title">¡Bienvenido a Ferrari Land!</h1>
                 <p className="card-description">
-				A gym for geeks that combines advanced technology with personalized routines to strengthen both body and mind. Train like a true geek!
+				Una pagina para compartir nuestra pasión.
                 </p>
 
                 <div className="card-buttons">
-                    <Link to="/login" className="btn btn-login">
+                    <Link to="/login" className="btn btn-secondary">
                         Login
                     </Link>
 					<br/>
-                    <Link to="/signup" className="btn btn-signup">
+                    <Link to="/signup" className="btn btn-secondary">
                         Signup
                     </Link>
                 </div>

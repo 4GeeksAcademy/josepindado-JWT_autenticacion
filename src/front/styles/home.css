@@ -5,7 +5,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('https://images.wallpaperscraft.com/image/single/gym_dumbbells_inventory_219519_1920x1080.jpg');
+    background-image: url('https://i.bstr.es/highmotor/2020/12/concesionario-ferrari-2-1280x853.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -76,22 +76,6 @@ input {
     transition: background-color 0.3s;
 }
 
-.btn-login {
-    background-color: #4a90e2;
-}
-
-.btn-login:hover {
-    background-color: #357abd;
-}
-
-.btn-signup {
-    background-color: #9013fe;
-}
-
-.btn-signup:hover {
-    background-color: #6d0fbf;
-}
-
 .error-message {
     color: red;
     font-size: 14px;
@@ -107,8 +91,4 @@ p {
 p a {
     color: #007bff;
     text-decoration: none;
-}
-
-p a:hover {
-    text-decoration: underline;
-}
+ }

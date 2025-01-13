@@ -58,18 +58,3 @@
     left: 0;
     width: 100%;
 }
-
-.footer p {
-    margin: 0;
-    font-size: 14px;
-}
-
-.footer a {
-    color: #4a90e2;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.footer a:hover {
-    color: #357abd;
-}

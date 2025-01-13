@@ -50,7 +50,7 @@ export const Signup = () => {
             />
           </div>
           <div>
-            <label>Password</label>
+            <label>Contraseña</label>
             <input
               type="password"
               value={password}
@@ -59,7 +59,7 @@ export const Signup = () => {
             />
           </div>
           <div>
-            <label>Confirm Password</label>
+            <label>Confirma contraseña</label>
             <input
               type="password"
               value={confirmPassword}
@@ -68,11 +68,11 @@ export const Signup = () => {
             />
           </div>
           <div className="card-buttons">
-            <button className="btn btn-signup" type="submit">Sign Up</button>
+            <button className="btn btn-secondary mb-3" type="submit">Sign Up</button>
           </div>
         </form>
         <p>
-          Already have an account? <a href="/login">Log In</a>
+          ¿Ya tienes una cuenta? <a href="/login">Log In</a>
         </p>
       </div>
     </div>

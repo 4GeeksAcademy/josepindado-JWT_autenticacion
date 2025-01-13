@@ -57,11 +57,11 @@ export const Login=()=>{
             />
           </div>
           <div className="card-buttons">
-            <button className="btn btn-login" type="submit">Login</button>
+            <button className="btn btn-secondary mb-3" type="submit">Login</button>
           </div>
         </form>
         <p>
-          Don't have an account? <a href="/signup">Sign Up</a>
+          ¿Todavia no tienes una cuenta? <a href="/signup">Sign Up</a>
         </p>
       </div>
     </div>
