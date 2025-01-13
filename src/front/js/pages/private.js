@@ -26,7 +26,7 @@ export const Private = () => {
       </div>
 
       <div className="card">
-        <button className="btn btn-signup" onClick={handleLogout}>
+        <button className="btn btn-secondary" onClick={handleLogout}>
           Log Out
         </button>
       </div>

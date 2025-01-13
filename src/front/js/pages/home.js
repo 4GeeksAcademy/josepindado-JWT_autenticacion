@@ -11,7 +11,7 @@ export const Home = () => {
             <div className="card">
                 <h1 className="card-title">¡Bienvenido a Ferrari Land!</h1>
                 <p className="card-description">
-				Una página para compartir nuestra pasión.
+				Una página para hacer quedadas y compartir nuestra pasión.
                 </p>
 
                 <div className="card-buttons">
