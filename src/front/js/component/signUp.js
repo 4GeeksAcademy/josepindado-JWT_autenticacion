@@ -26,12 +26,12 @@ const SignUp = () => {
                         <div className="card-body">
                             <form onSubmit={handleSignUp}>
                                 <div className="mb-3">
-                                    <label htmlFor="signup-fullName" className="form-label">Nombre</label>
+                                    <label htmlFor="signup-fullName" className="form-label">Nombre y apellidos</label>
                                     <input
                                         type="text"
                                         className="form-control"
                                         id="signup-fullName"
-                                        placeholder="Enter your full name"
+                                        placeholder="Introduce tu nombre y apellidos"
                                         value={fullName}
                                         onChange={(e) => setFullName(e.target.value)}
                                     />
@@ -42,7 +42,7 @@ const SignUp = () => {
                                         type="email"
                                         className="form-control"
                                         id="signup-email"
-                                        placeholder="Enter your email"
+                                        placeholder="Introduce tu email"
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
                                     />
@@ -53,7 +53,7 @@ const SignUp = () => {
                                         type="password"
                                         className="form-control"
                                         id="signup-password"
-                                        placeholder="Enter your password"
+                                        placeholder="Introduce tu contraseña"
                                         value={password}
                                         onChange={(e) => setPassword(e.target.value)}
                                     />
@@ -64,7 +64,7 @@ const SignUp = () => {
                                         type="password"
                                         className="form-control"
                                         id="signup-confirmPassword"
-                                        placeholder="Confirm your password"
+                                        placeholder="Confirma tu contraseña"
                                     />
                                 </div>
                                 <button type="submit" className="btn btn-primary w-100">Sign Up</button>

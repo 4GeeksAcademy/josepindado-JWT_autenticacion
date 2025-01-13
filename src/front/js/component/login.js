@@ -25,23 +25,23 @@ const Login = () => {
                         <div className="card-body">
                             <form onSubmit={handleLogIn}>
                                 <div className="mb-3">
-                                    <label htmlFor="login-email" className="form-label">Email Address</label>
+                                    <label htmlFor="login-email" className="form-label">Email</label>
                                     <input
                                         type="email"
                                         className="form-control"
                                         id="login-email"
-                                        placeholder="Enter your email"
+                                        placeholder="Introduce tu email"
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
                                     />
                                 </div>
                                 <div className="mb-3">
-                                    <label htmlFor="login-password" className="form-label">Password</label>
+                                    <label htmlFor="login-password" className="form-label">Contraseña</label>
                                     <input
                                         type="password"
                                         className="form-control"
                                         id="login-password"
-                                        placeholder="Enter your password"
+                                        placeholder="Introduce tu contraseña"
                                         value={password}
                                         onChange={(e) => setPassword(e.target.value)}
                                     />
