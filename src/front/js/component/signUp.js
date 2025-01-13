@@ -26,7 +26,7 @@ const SignUp = () => {
                         <div className="card-body">
                             <form onSubmit={handleSignUp}>
                                 <div className="mb-3">
-                                    <label htmlFor="signup-fullName" className="form-label">Full Name</label>
+                                    <label htmlFor="signup-fullName" className="form-label">Nombre</label>
                                     <input
                                         type="text"
                                         className="form-control"
@@ -37,7 +37,7 @@ const SignUp = () => {
                                     />
                                 </div>
                                 <div className="mb-3">
-                                    <label htmlFor="signup-email" className="form-label">Email Address</label>
+                                    <label htmlFor="signup-email" className="form-label">Email</label>
                                     <input
                                         type="email"
                                         className="form-control"
@@ -48,7 +48,7 @@ const SignUp = () => {
                                     />
                                 </div>
                                 <div className="mb-3">
-                                    <label htmlFor="signup-password" className="form-label">Password</label>
+                                    <label htmlFor="signup-password" className="form-label">Contraseña</label>
                                     <input
                                         type="password"
                                         className="form-control"
@@ -59,7 +59,7 @@ const SignUp = () => {
                                     />
                                 </div>
                                 <div className="mb-3">
-                                    <label htmlFor="signup-confirmPassword" className="form-label">Confirm Password</label>
+                                    <label htmlFor="signup-confirmPassword" className="form-label">Confirma contraseña</label>
                                     <input
                                         type="password"
                                         className="form-control"

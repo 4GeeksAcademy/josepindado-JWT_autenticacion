@@ -24,12 +24,11 @@ useEffect(()=>{
                 <div className="col-md-6">
                     <div className="card shadow">
                         <div className="card-header text-center bg-danger text-white">
-                            <h3>Protected Page</h3>
+                            <h3>Private Page</h3>
                         </div>
                         <div className="card-body text-center">
                             <p className="mb-4">
-                                🚫 This page is protected. Only authorized users can access it.
-                            </p>
+                                Esta pagina esta protegida. Solo usuarios autorizados.</p>
                             <button 
                                 className="btn btn-danger w-100" 
                                 onClick={handleLogout}>
