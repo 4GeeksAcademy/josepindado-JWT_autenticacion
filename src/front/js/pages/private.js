@@ -21,7 +21,7 @@ export const Private = () => {
   return (
     <div className="home-container justify-content-center">
       <div className="card">
-        <h2 className="card-title">Calendar</h2>
+        <h2 className="card-title">Calendario Ferrari Land</h2>
         <Calendar onChange={handleDateChange} value={selectedDate} />
       </div>
 
