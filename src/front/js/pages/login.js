@@ -11,7 +11,7 @@ export const Login=()=>{
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('https://probable-dollop-69rpxrw7p9prfrw7p-3001.app.github.dev/api/login', {
+      const response = await fetch(process.env.BACKEND_URL + "/api/login", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
